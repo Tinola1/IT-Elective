@@ -39,9 +39,7 @@ class AuthDialog(tk.Toplevel):
                         variable=self.r_host).grid(row=3, column=0, columnspan=2, pady=4)
         button(rf, "Create account", self.do_register).grid(row=4, column=0, columnspan=2, pady=10)
 
-        tk.Label(self, text="Demo logins:  admin@roamrest.com / admin123\n"
-                            "host@roamrest.com / host123   |   guest@roamrest.com / guest123",
-                 bg=PAPER, fg=MUTED, font=("Arial", 8), justify="center").pack()
+        
         self.bind("<Return>", lambda e: self.do_login() if self.nb.index("current") == 0
                   else self.do_register())
         self.l_entry.focus_set()
